@@ -5,137 +5,224 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="data:," />
-    <title>Contact Page</title>
+    <title>Official Links & Support</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --bg: #f4f2ee;
-        --surface: #ffffff;
-        --ink: #1c1a17;
-        --ink-soft: #5c564d;
-        --line: #e3ded4;
-        --warn-bg: #f7b500;
-        --warn-ink: #241a00;
-        --danger: #d21f3c;
-        --danger-dark: #a8122c;
-        --shadow: 0 18px 40px rgba(28, 26, 23, 0.12);
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #121110;
-          --surface: #1d1b19;
-          --ink: #f2efe9;
-          --ink-soft: #b3aa9d;
-          --line: #35312c;
-          --warn-bg: #f7b500;
-          --warn-ink: #241a00;
-          --danger: #e5324f;
-          --danger-dark: #c22440;
-          --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-        }
+        --bg: #0f1115;
+        --surface: #181b22;
+        --surface-hover: #212530;
+        --ink: #ffffff;
+        --ink-soft: #9aa0ae;
+        --line: #2d3342;
+        --primary: #0088cc;
+        --primary-gradient: linear-gradient(135deg, #0088cc 0%, #229ed9 100%);
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       }
       * { box-sizing: border-box; }
       html, body { margin: 0; padding: 0; }
       body {
-        font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
         background: var(--bg);
         color: var(--ink);
         min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 28px 16px 48px;
+        padding: 40px 16px;
+        background-image: radial-gradient(circle at 50% 0%, #1a2236 0%, #0f1115 70%);
       }
       main {
         width: 100%;
-        max-width: 460px;
-      }
-      .warn {
-        background: var(--warn-bg);
-        color: var(--warn-ink);
-        border-radius: 14px;
-        padding: 18px 18px 16px;
+        max-width: 440px;
         text-align: center;
-        box-shadow: var(--shadow);
-        margin-bottom: 22px;
       }
-      .warn h1 {
+      /* Profile Section */
+      .profile-section {
+        margin-bottom: 28px;
+      }
+      .avatar-wrapper {
+        position: relative;
+        width: 96px;
+        height: 96px;
+        margin: 0 auto 16px;
+      }
+      .avatar {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--primary);
+        box-shadow: 0 0 20px rgba(0, 136, 204, 0.4);
+      }
+      .verified-badge {
+        position: absolute;
+        bottom: 2px;
+        right: 2px;
+        background: #0088cc;
+        color: #fff;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--bg);
+      }
+      .verified-badge svg { width: 14px; height: 14px; }
+      
+      h1 {
+        margin: 0 0 6px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .bio {
         margin: 0;
-        font-size: 1.4rem;
-        line-height: 1.35;
-        font-weight: 800;
+        font-size: 0.92rem;
+        color: var(--ink-soft);
+        font-weight: 500;
       }
-      .demo-list {
+
+      /* Links List */
+      .links-list {
         display: flex;
         flex-direction: column;
         gap: 14px;
       }
-      .demo-btn {
+      .link-btn {
         appearance: none;
         width: 100%;
         border: 1px solid var(--line);
         background: var(--surface);
         color: var(--ink);
-        border-radius: 14px;
-        padding: 14px 16px;
+        border-radius: 16px;
+        padding: 16px 20px;
         display: flex;
         align-items: center;
-        gap: 14px;
+        gap: 16px;
         cursor: pointer;
         font-family: inherit;
         text-align: left;
         text-decoration: none;
-        transition: transform 0.12s ease, border-color 0.12s ease;
+        box-shadow: var(--shadow);
+        transition: all 0.2s ease;
+        position: relative;
+        overflow: hidden;
       }
-      .demo-btn:active { transform: scale(0.985); }
-      .demo-btn:focus-visible { outline: 3px solid var(--warn-bg); outline-offset: 2px; }
+      .link-btn:hover {
+        background: var(--surface-hover);
+        border-color: var(--primary);
+        transform: translateY(-2px);
+      }
+      .link-btn:active { transform: scale(0.98); }
+      
       .brand-ic {
         flex: 0 0 auto;
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
         color: #fff;
       }
-      .brand-ic svg { width: 26px; height: 26px; display: block; }
-      .ic-whatsapp { background: #25d366; }
-      .ic-telegram { background: #229ed9; }
-      .demo-btn .name {
-        font-size: 1.12rem;
-        font-weight: 600;
-        letter-spacing: 0.01em;
+      .brand-ic svg { width: 24px; height: 24px; display: block; }
+      .ic-whatsapp { background: linear-gradient(135deg, #25d366 0%, #1ebe5d 100%); }
+      .ic-telegram { background: linear-gradient(135deg, #229ed9 0%, #1785bc 100%); }
+      
+      .link-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .link-info .name {
+        font-size: 1.05rem;
+        font-weight: 700;
+      }
+      .link-info .desc {
+        font-size: 0.82rem;
+        color: var(--ink-soft);
+      }
+      .arrow-icon {
+        color: var(--ink-soft);
+        transition: transform 0.2s ease;
+      }
+      .link-btn:hover .arrow-icon {
+        transform: translateX(4px);
+        color: var(--ink);
+      }
+
+      /* Footer Trust note */
+      .footer-note {
+        margin-top: 32px;
+        font-size: 0.8rem;
+        color: var(--ink-soft);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
       }
     </style>
   </head>
   <body>
     <main>
-      <section class="warn" aria-label="Warning">
-        <h1>Connect with us</h1>
-      </section>
+      <!-- Profile Header -->
+      <div class="profile-section">
+        <div class="avatar-wrapper">
+          <!-- আপনার প্রোফাইল ছবি বা লোগো এখানে দিতে পারেন -->
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Profile" class="avatar" />
+          <div class="verified-badge" title="Verified Account">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+        </div>
+        <h1>Official Support Hub</h1>
+        <p class="bio">Connect with our team securely via official channels below.</p>
+      </div>
       
-      <div class="demo-list">
+      <!-- Links Container -->
+      <div class="links-list">
         <!-- WhatsApp Link -->
-        <a href="https://asiafilm.org/4/0b92cbc1f526a5c1e54b6385bcfb290e" target="_blank" rel="noopener noreferrer" class="demo-btn">
+        <a href="https://asiafilm.org/4/0b92cbc1f526a5c1e54b6385bcfb290e" target="_blank" rel="noopener noreferrer" class="link-btn">
           <span class="brand-ic ic-whatsapp" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.9-4.45 9.9-9.91C21.94 6.45 17.5 2 12.04 2Zm0 18.13a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.54-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.6.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
           </span>
-          <span class="name">WhatsApp</span>
+          <div class="link-info">
+            <span class="name">WhatsApp Support</span>
+            <span class="desc">Fast response via chat</span>
+          </div>
+          <span class="arrow-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
         </a>
 
         <!-- Telegram Link -->
-        <a href="https://asiafilm.org/4/0b92cbc1f526a5c1e54b6385bcfb290e" target="_blank" rel="noopener noreferrer" class="demo-btn">
+        <a href="https://asiafilm.org/4/0b92cbc1f526a5c1e54b6385bcfb290e" target="_blank" rel="noopener noreferrer" class="link-btn">
           <span class="brand-ic ic-telegram" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.4 18.8 19c-.23 1.03-.85 1.28-1.72.8l-4.76-3.51-2.3 2.21c-.25.26-.47.47-.96.47l.35-4.93 8.97-8.1c.39-.35-.09-.54-.6-.2L6.6 13.34 1.83 11.85c-1.04-.32-1.06-1.04.22-1.54L20.7 3.1c.86-.32 1.62.2 1.2 1.3Z"/></svg>
           </span>
-          <span class="name">Telegram</span>
+          <div class="link-info">
+            <span class="name">Telegram Channel</span>
+            <span class="desc">Join our official community</span>
+          </div>
+          <span class="arrow-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
         </a>
+      </div>
+
+      <div class="footer-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Secure & Verified Connection</span>
       </div>
     </main>
   </body>
