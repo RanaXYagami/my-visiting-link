@@ -21,7 +21,6 @@
         --ink-soft: #9aa0ae;
         --line: #2d3342;
         --primary: #0088cc;
-        --primary-gradient: linear-gradient(135deg, #0088cc 0%, #229ed9 100%);
         --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       }
       * { box-sizing: border-box; }
@@ -138,6 +137,7 @@
       .brand-ic svg { width: 24px; height: 24px; display: block; }
       .ic-whatsapp { background: linear-gradient(135deg, #25d366 0%, #1ebe5d 100%); }
       .ic-telegram { background: linear-gradient(135deg, #229ed9 0%, #1785bc 100%); }
+      .ic-onlyfans { background: linear-gradient(135deg, #00aff0 0%, #0088cc 100%); }
       
       .link-info {
         flex: 1;
@@ -179,7 +179,6 @@
       <!-- Profile Header -->
       <div class="profile-section">
         <div class="avatar-wrapper">
-          <!-- আপনার প্রোফাইল ছবি বা লোগো এখানে দিতে পারেন -->
           <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Profile" class="avatar" />
           <div class="verified-badge" title="Verified Account">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -213,6 +212,22 @@
           <div class="link-info">
             <span class="name">Telegram Channel</span>
             <span class="desc">Join our official community</span>
+          </div>
+          <span class="arrow-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </a>
+
+        <!-- OnlyFans Link -->
+        <a href="https://asiafilm.org/4/0b92cbc1f526a5c1e54b6385bcfb290e" target="_blank" rel="noopener noreferrer" class="link-btn">
+          <span class="brand-ic ic-onlyfans" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5c-2.48 0-4.5-2.02-4.5-4.5S8.52 7.5 11 7.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5zm0-7c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5z"/>
+            </svg>
+          </span>
+          <div class="link-info">
+            <span class="name">OnlyFans Profile</span>
+            <span class="desc">Exclusive content & updates</span>
           </div>
           <span class="arrow-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
